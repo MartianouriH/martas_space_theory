@@ -1,0 +1,146 @@
+html {
+    background: url(bg_parallax_stars_640x1600.png);
+}
+
+nav {
+    display: flex;
+    width: 97vw;
+    padding: 0;
+    box-sizing: content-box;
+    margin-top:20px;
+}
+nav:after {
+  content: "*Planets might maybe possibly not be to scale";
+  color: white;
+  position: fixed;
+  bottom: 0;
+  z-index: -5;
+}
+
+nav > ul {
+  display: flex;
+}
+
+nav > ul > li {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 50%;
+  list-style-type: none;
+  background: white;
+  animation: move 35s linear infinite;
+  cursor: pointer;
+  margin-bottom: 75px;
+  transition: 0.5s all;
+}
+nav > ul > li:nth-child(1) {
+  background: url(earth-map-summer-july-87652.jpeg);
+  box-shadow: inset -10px -10px 40px rgba(52, 115, 105, 0.5), 0 0 60px -20px rgba(131, 191, 103, 0.72), -10px -10px 40px -10px rgba(131, 191, 103, 0.23);
+}
+nav > ul > li:nth-child(1):after {
+  content: "";
+  background: url(https://drive.google.com/uc?export=view&id=1Al9iQ0kViMjtlkAVOontGg-ck3hGa_oQ);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+  animation: move 30s infinite linear;
+  opacity: 0.4;
+}
+nav > ul > li:nth-child(2) {
+  background: url(mars.jpg);
+  box-shadow: inset -10px -10px 40px rgba(194, 104, 48, 0.5), 0 0 60px -20px rgba(194, 104, 48, 0.72), -10px -10px 40px -10px rgba(194, 104, 48, 0.23);
+}
+nav > ul > li:nth-child(3) {
+  background: url(jupiter.jpg);
+  box-shadow: inset -10px -10px 40px rgba(255, 183, 138, 0.5), 0 0 60px -20px rgba(255, 183, 138, 0.72), -10px -10px 40px -10px rgba(255, 183, 138, 0.23);
+}
+nav > ul > li:nth-child(4) {
+  background: url(https://drive.google.com/uc?export=view&id=1bq6uep1BfPCkogheyrmGKglkjmgRFspF);
+  box-shadow: inset -10px -10px 40px rgba(255, 209, 181, 0.5), 0 0 60px -20px rgba(255, 209, 181, 0.72), -10px -10px 40px -10px rgba(255, 209, 181, 0.23);
+}
+nav > ul > li:nth-child(5) {
+  background: url(https://drive.google.com/uc?export=view&id=1NS_ffyQnZi7PqedQl0e6I0Tyk6usRZvC);
+  box-shadow: inset -10px -10px 40px rgba(120, 253, 255, 0.5), 0 0 60px -20px rgba(120, 253, 255, 0.72), -10px -10px 40px -10px rgba(120, 253, 255, 0.23);
+}
+nav > ul > li:hover {
+  transform: scale(1.2);
+  margin: 0px 50px;
+}
+nav > ul > li:hover a {
+  color: white;
+}
+nav > ul > li > a {
+  color: white;
+  z-index: 10;
+  text-decoration: inherit;
+  position: absolute;
+  bottom: -50px;
+  font-size: 30px;
+  left: 50%;
+  transform: translateX(-25%) rotateZ(60deg);
+}
+
+li > ul {
+  position: absolute;
+  transform: rotateZ(60deg);
+  bottom: -150px;
+  right: -110px;
+  width: 300px;
+}
+li > ul > li {
+  list-style-type: none;
+  position: relative;
+  display: flex;
+}
+li > ul > li > a {
+  color: rgba(255, 255, 255, 0);
+  z-index: 10;
+  text-decoration: inherit;
+  transition: 0.2s all;
+}
+li > ul > li > a:hover {
+  color: #969696;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -600px 0;
+  }
+}
+@media screen and (max-width: 900px) {
+
+html {
+  overflow-x: hidden;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

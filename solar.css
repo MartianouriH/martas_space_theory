@@ -1,0 +1,651 @@
+body {
+    background: #000;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    height: 850px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.solar-system {
+
+    height: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.solar-system::after {
+    content: 'Click the block to know more >';
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    color: #efefef;
+    font-family: sans
+}
+
+.info {
+    background: #111;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+}
+
+.sun {
+    background:rgb(255, 74, 8);
+    width: 100px;
+    height: 100px; 
+    animation: pole-rotate 30s infinite linear;
+    box-shadow: 0px 0px 20px #fc9328
+}
+
+.mercury {
+    background: radial-gradient(at top, #dbdbdb, #454545);
+    width: 20px;
+    height: 20px; 
+    animation: mercury-rotate 6s infinite linear;
+}
+
+@keyframes pole-rotate {
+    0% {
+        background-position: center center;
+    }
+    50% {
+        background-position: 50% 40%;
+    }
+    to {
+        transform: rotate(360deg);
+        background-position: center center;
+    }
+}
+
+@keyframes mercury-rotate {
+    0% {
+        transform: rotateZ(0) translateX(-70px);
+    }
+    to {
+        transform: rotateZ(360deg) translateX(-70px) ;
+    }
+}
+
+.venus {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/PIA00271_Venus_%28Computer_Simulated_Global_View_of_the_Northern_Hemisphere%29.jpg/600px-PIA00271_Venus_%28Computer_Simulated_Global_View_of_the_Northern_Hemisphere%29.jpg') no-repeat;
+    width: 40px;
+    height: 40px; 
+    background-size: 100% 100%;
+    animation: venus-rotate 30s infinite linear;
+}
+
+@keyframes venus-rotate {
+    0% {
+        transform: rotateZ(20deg) translateX(-100px) ;
+    }
+    to {
+        transform: rotateZ(380deg) translateX(-100px);
+    }
+}
+
+.earth {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Earth-DSCOVR-20150706-IFV.jpg/610px-Earth-DSCOVR-20150706-IFV.jpg');
+    background-size: 120% 120%;
+    background-position: center center;
+    width: 42px;
+    height: 42px; 
+    animation: earth-rotate 14s infinite linear;
+    box-shadow: 0px 0px 10px #6897c7
+}
+
+@keyframes earth-rotate {
+    0% {
+        transform: rotateZ(40deg) translateX(-150px) ;
+    }
+    to {
+        transform: rotateZ(400deg) translateX(-150px);
+    }
+}
+
+.mars {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Mars_23_aug_2003_hubble.jpg/267px-Mars_23_aug_2003_hubble.jpg');
+    background-size: 100% 100%;
+    width: 28px;
+    height: 28px; 
+    animation: mars-rotate 28s infinite linear;
+}
+
+@keyframes mars-rotate {
+    0% {
+        transform: rotateZ(0deg) translateX(-190px) ;
+    }
+    to {
+        transform: rotateZ(360deg) translateX(-190px);
+    }
+}
+
+.jupiter {
+    background: url('https://solarsystem.nasa.gov/internal_resources/3794/');
+    background-size: 150% 150%;
+    background-position: center center;
+    width: 60px;
+    height: 60px; 
+    animation: jupiter-rotate 160s infinite linear;
+}
+
+@keyframes jupiter-rotate {
+    0% {
+        transform: rotateZ(0deg) translateX(-240px) ;
+    }
+    50% {
+        background-position: 55% 40%;
+    }
+    to {
+        transform: rotateZ(360deg) translateX(-240px);
+        background-position: center center;
+    }
+}
+
+.saturn {
+    background: url('https://rwspace.ru/wp-content/uploads/2018/12/2-17.jpg');
+    background-size: 100% 100%;
+    background-position: center center;
+    width: 80px;
+    height: 60px; 
+    animation: saturn-rotate 320s infinite linear;
+}
+
+@keyframes saturn-rotate {
+    0% {
+        transform: rotateZ(60deg) translateX(-310px) ;
+    }
+    to {
+        transform: rotateZ(420deg) translateX(-310px);
+    }
+}
+
+.uranus {
+    background: radial-gradient(circle at top, #a9f5f5, #3c7483);
+    width: 50px;
+    height: 50px; 
+    animation: uranus-rotate 1120s infinite linear;
+}
+
+@keyframes uranus-rotate {
+    0% {
+        transform: rotateZ(-180deg) translateX(-360px) ;
+    }
+    to {
+        transform: rotateZ(180deg) translateX(-360px);
+    }
+}
+
+.neptune {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/600px-Neptune_Full.jpg');
+    background-size: 120% 120%;
+    background-position: center center;
+    width: 45px;
+    height: 45px; 
+    animation: neptune-rotate 1420s infinite linear;
+}
+
+@keyframes neptune-rotate {
+    0% {
+        transform: rotateZ(90deg) translateX(-410px);
+    }
+    to {
+        transform: rotateZ(450deg) translateX(-410px);
+    }
+}
+
+.info {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    color: #888;
+    margin: 2% 0;
+}
+
+.planet-info {
+    padding: 5px;
+    cursor: pointer;
+    font-family: sans;
+    position: relative;
+    border-bottom: 1px solid #222;
+    transition: transform 0.3s linear;
+    box-sizing: border-box;
+}
+
+.planet-info:hover {
+    background-color: #000;
+    border: 1px solid #efefef;
+    color: #efefef;
+    transform:translateX(-40px) scale(1.1);
+    z-index: 10;
+}
+
+.planet-info .mercury,
+.planet-info .venus,
+.planet-info .earth,
+.planet-info .mars,
+.planet-info .jupiter,
+.planet-info .uranus,
+.planet-info .neptune
+{
+    animation: none;
+    width: 80px;
+    height: 80px;
+    box-shadow: none;
+    position: relative;
+    float: left;
+    shape-outside: circle(50%);
+    margin-right: 15px;
+}
+
+.planet-info .saturn {
+    animation: none;
+    width: 110px;
+    height: 80px;
+    position: relative;
+    float: left;
+}
+
+.planet-info h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+.planet-info p {
+    margin: 0;
+    padding: 0;
+    font-size: 75%;
+}
+
+.additional {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fefefe;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 400px;
+    width: 0;
+    transition: width 0.3s linear;
+    z-index: 15;
+}
+
+.additional.show {
+    width: 40%;
+    font-family: sans;
+    margin: 50px;
+    padding: 30px 50px;
+    text-align: justify;
+    text-indent: 30px;
+    background: black;
+color: gold;
+    
+}
+.close {
+    visibility: hidden;
+}
+
+.close.show {
+    visibility: visible;
+    position: absolute;
+    display: inline-block;
+    text-indent: 0;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    transition: transform 0.3s linear;
+}
+
+.close:hover {
+    transform: scale(1.5)
+}
+.about {
+    color: gold;
+}
+    
+
+.main {
+    border: blu soli;
+    height: 2000px;
+}
+.menu {
+    border: #888 solid;
+    height: 150px;
+display: flex;
+background:rgb(26, 26, 26);
+}
+
+.glow-on-hover {
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background: #111;
+    background: linear-gradient(45deg, #001aff, #3000b3, #140064, #0c0058, #ffea00, #001aff, #3000b3, #140064, #0c0058);
+    /* position: absolute; */
+    z-index: 0;
+    animation: glowing 20s linear infinite;
+    border-radius: 10px;
+    background-size: 400%;
+    justify-content: center;
+    margin-left: 4%;
+    margin-top: 25px;
+    height: 100px;
+}
+
+.glow-on-hover:before {
+    content: '';
+
+    top: -2px;
+    left:-2px;
+
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+
+}
+
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hovr:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.solar-system,a {
+    color:chocolate;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-left: 25%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cb {
+  border-radius: 50%;
+  flex-shrink: 0;
+  perspective: 500px;
+}
+.cb label {
+  font-family: "Ubuntu Condensed";
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1;
+  text-shadow: 1px 1px 0 #111, 1.5px 1.5px 0 #111, 2px 2px 0 #111;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 25%);
+}
+.cb label .transparent {
+  color: #888;
+  font-size: 0.75em;
+  white-space: nowrap;
+}
+
+.sol {
+    width: calc(864337.3px * 0.00125);
+    height: calc(864337.3px * 0.00125);
+    background-color: white;
+    box-shadow: 0 0 1000px #fff466, inset 0 0 200px #ff8c00, inset 0 0 500px #ffbf00;
+    position: absolute;
+    /* top: 50%; */
+    margin-top: 700px;
+    transform: translateY(-50%);
+    right: 85vw;
+}
+
+.planets {
+    width: 85vw;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5%;
+    margin-top: 700px;
+}
+
+  .emercury {
+    width: calc(3032px * 0.00125);
+    height: calc(3032px * 0.00125);
+    background-color: #999;
+    box-sizing: border-box;
+    border-left: calc(3032px * 0.0004) solid transparent;
+    border-right: calc(3032px * 0.0004) solid #666666;
+  }
+  
+  .evenus {
+    width: calc(7520.8px * 0.00125);
+    height: calc(7520.8px * 0.00125);
+    background-color: #f7aa74;
+    box-sizing: border-box;
+    border-left: calc(7520.8px * 0.0004) solid transparent;
+    border-right: calc(7520.8px * 0.0004) solid #f16f14;
+  }
+  
+  .eearth {
+    width: calc(7917.5px * 0.00125);
+    height: calc(7917.5px * 0.00125);
+    background-color: #5193d1;
+    box-sizing: border-box;
+    border-left: calc(7917.5px * 0.0004) solid transparent;
+    border-right: calc(7917.5px * 0.0004) solid #276095;
+  }
+  
+  .emars {
+    width: calc(4212px * 0.00125);
+    height: calc(4212px * 0.00125);
+    background-color: #ce5844;
+    box-sizing: border-box;
+    border-left: calc(4212px * 0.0004) solid transparent;
+    border-right: calc(4212px * 0.0004) solid #883224;
+  }
+  
+  .ejupiter {
+    width: calc(86881.4px * 0.00125);
+    height: calc(86881.4px * 0.00125);
+    background-color: #c9936a;
+    box-sizing: border-box;
+    border-left: calc(86881.4px * 0.0004) solid transparent;
+    border-right: calc(86881.4px * 0.0004) solid #966037;
+  }
+  
+  .esaturn {
+    width: calc(72367.4px * 0.00125);
+    height: calc(72367.4px * 0.00125);
+    background-color: #967e42;
+    box-sizing: border-box;
+    border-left: calc(72367.4px * 0.0004) solid transparent;
+    border-right: calc(72367.4px * 0.0004) solid #4f4323;
+  }
+  .saturn .ring {
+    box-sizing: border-box;
+    width: calc(150000px * 0.00125);
+    height: calc(150000px * 0.00125);
+    border-radius: 50%;
+    transform: translate(-41.5%, -25.75%);
+    background: transparent;
+    border: 35px solid #ccba8b;
+    border-right: none;
+    opacity: 0.125;
+  }
+  
+  .euranus {
+    width: calc(31518px * 0.00125);
+    height: calc(31518px * 0.00125);
+    background-color: #6cb2ab;
+    box-sizing: border-box;
+    border-left: calc(31518px * 0.0004) solid transparent;
+    border-right: calc(31518px * 0.0004) solid #3f7973;
+  }
+  
+  .eneptune {
+    width: calc(30599px * 0.00125);
+    height: calc(30599px * 0.00125);
+    background-color: #253e66;
+    box-sizing: border-box;
+    border-left: calc(30599px * 0.0004) solid transparent;
+    border-right: calc(30599px * 0.0004) solid #0a111b;
+  }
+  
+  .epluto {
+    width: calc(1477px * 0.00125);
+    height: calc(1477px * 0.00125);
+    background-color: #b5b5b5;
+    box-sizing: border-box;
+    border-left: calc(1477px * 0.0004) solid transparent;
+    border-right: calc(1477px * 0.0004) solid #828282;
+  }
+
+.star {
+  position: fixed;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.twinkle {
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: -3s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+@media screen and (max-width: 900px) {
+    .main {
+        border: blue solid;
+        height: 3000px;
+        width: 1290px;
+      overflow-x: hidden;
+    }
+    .html {
+        overflow-x: hidden;
+    }
+    .planets {
+        width: 85vw;
+        margin-left: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 10%;
+        margin-top: 700px;
+    }
+    .emars {
+        width: 30px;
+        height: 30px;
+        background-color: #ce5844;
+        box-sizing: border-box;
+        border-left: calc(4212px * 0.0004) solid transparent;
+        border-right: calc(4212px * 0.0004) solid #883224;
+    }
+    .ejupiter {
+        width: 200px;
+        height: 200px;
+        background-color: #c9936a;
+        box-sizing: border-box;
+        border-left: calc(86881.4px * 0.0004) solid transparent;
+        border-right: calc(86881.4px * 0.0004) solid #966037;
+    }
+    .euranus {
+        width: 100px;
+        height: 100px;
+        background-color: #6cb2ab;
+        box-sizing: border-box;
+        border-left: calc(31518px * 0.0004) solid transparent;
+        border-right: calc(31518px * 0.0004) solid #3f7973;
+    }
+    .eneptune {
+        width: 90px;
+        height: 90px;
+        background-color: #253e66;
+        box-sizing: border-box;
+        border-left: calc(30599px * 0.0004) solid transparent;
+        border-right: calc(30599px * 0.0004) solid #0a111b;
+    }
+    .emercury {
+        width: 25px;
+        height: 25px;
+        background-color: #999;
+        box-sizing: border-box;
+        border-left: calc(3032px * 0.0004) solid transparent;
+        border-right: calc(3032px * 0.0004) solid #666666;
+    }
+    .evenus {
+        width: 35px;
+        background-color: #f7aa74;
+        box-sizing: border-box;
+        border-left: calc(7520.8px * 0.0004) solid transparent;
+        border-right: calc(7520.8px * 0.0004) solid #f16f14;
+        height: 35px;
+    }
+    .eearth {
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        border-left: calc(7917.5px * 0.0004) solid transparent;
+        /* border-right: calc(7917.5px * 0.0004) solid #276095; */
+        background: linear-gradient(45deg, #007eff, #0bff00);
+    }
+
+
+
+
+
+
+}
+
