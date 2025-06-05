@@ -115,7 +115,8 @@ window.onload = () => {
 
     document.querySelector('.close').onclick = () => {
         document.querySelector('.about').innerHTML = ''
-        document.querySelector('.additional').classList.remove('show') 
+        document.querySelector('.additional').classList.remove('show')
+        document.querySelector('.close').classList.remove('show')
     }
 
 }

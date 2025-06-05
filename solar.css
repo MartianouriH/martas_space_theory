@@ -28,7 +28,7 @@ body {
     bottom: 15px;
     right: 10px;
     color: #efefef;
-    font-family: sans
+    font-family: sans-serif
 }
 
 .info {
@@ -214,7 +214,7 @@ body {
 .planet-info {
     padding: 5px;
     cursor: pointer;
-    font-family: sans;
+    font-family: sans-serif;
     position: relative;
     border-bottom: 1px solid #222;
     transition: transform 0.3s linear;
@@ -281,7 +281,7 @@ body {
 
 .additional.show {
     width: 40%;
-    font-family: sans;
+    font-family: sans-serif;
     margin: 50px;
     padding: 30px 50px;
     text-align: justify;
@@ -314,7 +314,7 @@ color: gold;
     
 
 .main {
-    border: blu soli;
+    border: blue solid;
     height: 2000px;
 }
 .menu {
@@ -366,7 +366,7 @@ background:rgb(26, 26, 26);
     opacity: 1;
 }
 
-.glow-on-hovr:after {
+.glow-on-hover:after {
     z-index: -1;
     content: '';
     position: absolute;
