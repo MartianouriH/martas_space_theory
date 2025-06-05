@@ -1,6 +1,6 @@
 
 .main {
-    border: blu soli;
+    border: blue solid;
     height: 3000px;
     overflow-x: hidden;
 }
@@ -56,7 +56,7 @@ display: flex;
     opacity: 1;
 }
 
-.glow-on-hovr:after {
+.glow-on-hover:after {
     z-index: -1;
     content: '';
     position: absolute;
@@ -80,7 +80,7 @@ html {
     margin-left: 33%;
 }
 .btext {
-    margin-left: 20;
+    margin-left: 20px;
     font-size: 24px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: none;
@@ -163,7 +163,7 @@ display: flex;
         margin-left: 10%;
         margin-top: 79px;
         height: 150px;
-        margin-right: 12;
+        margin-right: 12px;
     }
     .html {
         overflow-x: hidden;
@@ -183,7 +183,7 @@ display: flex;
     }
  #C {
         height:1000px;
-        width: 1304PX;
+       width: 1304px;
         
     
 }
